@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+
+    <!--Leaflt-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src='https://unpkg.com/leaflet@1.5.1/dist/leaflet-src.js'></script>  <!--agregado para linkear js-->
+<!--CHARTJS-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+    <!--RECURSOS-->
+    <script type="text/javascript" src="ValleAncho.js"></script>
+
+<!-- ESTILOS -->
+
+</head>
+
+<!--CONTENIDO_________________________________________________________________-->
+
+<body>
+    <div class="container-fluid" >
+        <!--1 Cabecera-->
+        <div class="row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <img src="Imagenes/Imagen_proyecto-01.png" width="120" style= "margin-left: 5%;" >
+            </div>
+            <div class="col-sm-8 mt-5">
+                <h2>Humedales Altoandinos</h2>
+            </div>
+        </div>
+        <!--1 Cierre Cabecera-->
+
+        <!--CUERPO-->
+        <div class="row">
+            <!--BARRA LATERAL-->
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <p>Agregar COntenido</p>
+            </div>
+            <!--TABS-->
+            <div class="col-sm-8 mt-5">
+                <!--ESTRUCTURA TABS-->
+                <nav> 
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-mapa-tab" data-toggle="tab" href="#map" role="tab"
+                            aria-controls="nav-mapa" aria-selected="true">Mapa</a>
+                        <a class="nav-item nav-link" id="nav-graf-tab" data-toggle="tab" href="#nav-graf" role="tab"
+                            aria-controls="nav-graf" aria-selected="false">Gráficos</a>
+                        <a class="nav-item nav-link" id="nav-scrap-tab" data-toggle="tab" href="#nav-scrap" role="tab"
+                            aria-controls="nav-scrap" aria-selected="false">Scraps</a>
+                    </div>
+                </nav>
+                <!--CONTENIDO TABS-->
+                <div class="tab-content" id="nav-tabContent" >
+
+                    <div class="tab-pane fade show active" id="map" role="tabpanel" aria-labelledby="nav-mapa-tab" style="height: 50vh; width: 100%;"> 
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-graf" role="tabpanel" aria-labelledby="nav-graf-tab" style="height: 50vh; width: 100%;">
+                        <h3> Gráfica Pixeles por Categoría por Humedal </h3>
+                        <p id="texto"> </p>
+                        <canvas id="myChart" style="width: 100%; height: auto;"></canvas>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-scrap" role="tabpanel" aria-labelledby="nav-scrap-tab">Aqui algo scrapeado</div>
+                </div>
+            </div>
+        </div>
+        <!--1 CUERPO-->
+
+        
+
+
+    </div> <!--Cierre Página-->
+
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./mapa.js"></script> <!--Mapa-->
+    <script src="chart_1.js"></script> <!--Grafico-->
+
+    <!-- <script>
+            $.getJSON("sismos_chile.json", function (lolo) {
+                 console.log(lolo)
+                var labels2 = lolo.features.map(function (lola) {  //features es un arreglo con []
+                    //console.log(lola)
+                    console.log(lola.properties.magnitud)
+                    return lola.properties;
+                });
+                //console.log(labels2)
+            });
+    </script> -->
+</body>
+
+</html>
+
+<!--PREGUNTAS:
+    1.Porque cundo pongo los script de leaflet abajo no funciona la pagina?
+    2. ¿Por qué me salen muchos warm?
+-->
