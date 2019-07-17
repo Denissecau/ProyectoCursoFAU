@@ -29,6 +29,8 @@
 
     <!--RECURSOS-->
     <script type="text/javascript" src="ValleAncho.js"></script>
+    <script type="text/javascript" src="Derechos_Copiapo.js"></script>
+
 
 <!-- ESTILOS -->
 
@@ -53,19 +55,22 @@
         <div class="row">
             <!--BARRA LATERAL-->
             <div class="col-sm-4 col-md-4 col-lg-4">
-                <p>Agregar COntenido</p>
+                <h4>Grafica por Humedal</h4>
+                <br>
+                <p> Haga clic sobre un humedal para ver su gráfico</p>
+                <br>
+                <h6 id="seleccion"></h6>
+                <canvas id="myChart" style="width: 100%; height: auto;"></canvas>
             </div>
             <!--TABS-->
-            <div class="col-sm-8 mt-5">
+            <div class="col-sm-8 mt-8">
                 <!--ESTRUCTURA TABS-->
                 <nav> 
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav-mapa-tab" data-toggle="tab" href="#map" role="tab"
                             aria-controls="nav-mapa" aria-selected="true">Mapa</a>
                         <a class="nav-item nav-link" id="nav-graf-tab" data-toggle="tab" href="#nav-graf" role="tab"
-                            aria-controls="nav-graf" aria-selected="false">Gráficos</a>
-                        <a class="nav-item nav-link" id="nav-scrap-tab" data-toggle="tab" href="#nav-scrap" role="tab"
-                            aria-controls="nav-scrap" aria-selected="false">Scraps</a>
+                            aria-controls="nav-graf" aria-selected="false">Tabla Derechos de Aprovechamiento</a>
                     </div>
                 </nav>
                 <!--CONTENIDO TABS-->
@@ -75,13 +80,12 @@
                     </div>
 
                     <div class="tab-pane fade" id="nav-graf" role="tabpanel" aria-labelledby="nav-graf-tab" style="height: 50vh; width: 100%;">
-                        <h3> Gráfica Pixeles por Categoría por Humedal </h3>
-                        <p id="texto"> </p>
-                        <canvas id="myChart" style="width: 100%; height: auto;"></canvas>
+                     <h3 style="text-align:center;">Derechos de Aprovechamoento de aguas subterráneas</h3>
+                     <br>
+                     <h5 style="text-align:center;">Cuenca Salar de Maricunga</h5>
+                     <br>
+                        <p id="showData"></p>
                     </div>
-
-                    <div class="tab-pane fade" id="nav-scrap" role="tabpanel" aria-labelledby="nav-scrap-tab">Aqui algo scrapeado</div>
-                </div>
             </div>
         </div>
         <!--1 CUERPO-->
@@ -98,18 +102,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="./mapa.js"></script> <!--Mapa-->
     <script src="chart_1.js"></script> <!--Grafico-->
+    <script src="table.js"></script> <!--Tabla-->
 
-    <!-- <script>
-            $.getJSON("sismos_chile.json", function (lolo) {
-                 console.log(lolo)
-                var labels2 = lolo.features.map(function (lola) {  //features es un arreglo con []
-                    //console.log(lola)
-                    console.log(lola.properties.magnitud)
-                    return lola.properties;
-                });
-                //console.log(labels2)
-            });
-    </script> -->
+
 </body>
 
 </html>

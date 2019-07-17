@@ -13,11 +13,13 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "curl": "^0.1.4",
+    "d3": "^5.9.7",
     "http-serve": "^1.0.1",
     "jquery": "^3.4.1",
     "jsdom": "^15.1.1",
     "leaflet": "^1.5.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "read-excel-file": "^4.0.1"
   },
   "dependencies": {
     "httpserver": "^0.3.0",
