@@ -16,7 +16,7 @@
     "d3": "^5.9.7",
     "http-serve": "^1.0.1",
     "jquery": "^3.4.1",
-    "jsdom": "^15.1.1",
+    "jsdom": "^16.5.0",
     "leaflet": "^1.5.1",
     "popper.js": "^1.15.0",
     "read-excel-file": "^4.0.1"
